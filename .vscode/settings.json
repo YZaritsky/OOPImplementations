@@ -5,6 +5,10 @@
     "strings": "off",
     "other": "off"
   },
+  "git.enableStatusBarSync": false,
+  "git.decorations.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
   "editor.suggestOnTriggerCharacters": false,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.tabCompletion": "off",

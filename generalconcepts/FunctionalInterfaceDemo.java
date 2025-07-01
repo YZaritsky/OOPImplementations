@@ -90,7 +90,7 @@ public class FunctionalInterfaceDemo {
             int points = 100;
             Employee employee = name -> {
                 System.out.printf("The employee %s has %s points: ", name, points); // Must be final or effectivly final
-                // points++; // If we dont cross this line this doesnt work, because its not
+                // points++; // If we dont cross this line out this doesnt work, because its not
                 // effectivly final with it.
                 employee.employeeData("Sami");
             };

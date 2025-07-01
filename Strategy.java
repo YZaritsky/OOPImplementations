@@ -1,6 +1,6 @@
 // Step 1: Create interface for the API you want to be "Strategized" and it's implemintations (SortStrategy and its implementations)
 // Step 2: In your "MainAPI" add the StrategizedAPI as a Class Member. (ClassHoldingStrategyInIt)
-// Notes: Factory usually helps.
+// Notes: Factory usually helps with step 1.
 
 public class Strategy {
     // Step 1.

@@ -1,8 +1,6 @@
 package generalthings;
 
-import java.util.LinkedList;
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*
 
 public class Collections {
     // Usefull methods: add, clear, contains, isEmpty, remove, size, toArray
@@ -24,12 +22,20 @@ public class Collections {
     // TreeSet (Navigatable Set) -> Must provide Comparable Function to it if not
     // primitive type.
 
-
     // ** Collections - Map **
 
     // HashMap
     // Allows: put(k, v), remove(k), containsKey(k), containsValue(v), get(k),
-    // size(), keySet(), values();
+    // size(), entrySet(), keySet(), values();
+
+    //entrySet() is usefull:
+    void hashMapFunctions(){
+    HashMap<T, Integer> myMap = new HashMap<T, Integer>();
+
+    for (Map.Entry<T, Integer> entry : myMap.entrySet()) {
+        System.out.printf("%s has %d occurrences%n", entry.getKey(), entry.getValue());
+    }
+}
     // TreeMap (Navigatable Map)
 
     // int Object.hashCode() -> Returns the address of the object by default, or
