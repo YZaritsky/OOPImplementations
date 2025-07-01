@@ -1,0 +1,38 @@
+{
+  // === BEGIN: Disable Auto-Complete & Suggestions (Temporary) ===
+  "editor.quickSuggestions": {
+    "comments": "off",
+    "strings": "off",
+    "other": "off"
+  },
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.tabCompletion": "off",
+  "[java]": {
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.suggest.showKeywords": false,
+    "editor.suggest.showFunctions": false,
+    "editor.suggest.showMethods": false,
+    "editor.suggest.showModules": false,
+    "editor.suggest.showReferences": false,
+    "editor.suggest.showColors": false,
+    "editor.suggest.showUsers": false,
+    "editor.suggest.showIssues": false,
+    "editor.suggest.showDeprecated": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.tabCompletion": "off"
+  },
+  // === END: Disable Auto-Complete & Suggestions (Temporary) ===
+
+  // === BEGIN: Disable Copilot Suggestions (Temporary) ===
+  "github.copilot.enable": {
+    "*": false
+  },
+  "java.debug.settings.onBuildFailureProceed": true
+  // === END: Disable Copilot Suggestions (Temporary) ===
+}

@@ -1,0 +1,76 @@
+public class DecoratorUsingAbstractClass {
+    // Step 1 : Create some Abstract Class that is going to be decorated. (Fish) ->
+    // Must have a Method in it.
+    // Step 2 : Create Implementation of that Abstract Class. (BabyFish)-> Should
+    // @Override!
+    // Step 3 : Create Decorator Abstract Class, extending the first one, and
+    // providing default functionality to be split between all children.
+    // (FishDecorator)
+    // Step 4 : Extend that decorator using the object of the class from step 2.
+    // (Gold),
+    // This is the part where we basically enhance the first object(Decorate it).
+    // Step 5: When we call it, Create a new object of the First(BabyFish), and then
+    // re-create it using the 2nd(Gold).
+
+    static abstract class Fish {
+        public abstract String getDescription();
+    };
+
+    static class BabyFish extends Fish {
+        @Override
+        public String getDescription() {
+            return "Baby Fish";
+        }
+    }
+
+    static abstract class FishDecorator extends Fish {
+        private Fish fish;
+
+        public FishDecorator(Fish fish) {
+            this.fish = fish;
+        }
+
+        @Override
+        public String getDescription() {
+            return fish.getDescription();
+        }
+    }
+
+    static class Gold extends FishDecorator {
+        public Gold(Fish fish) {
+            super(fish);
+        }
+
+        @Override
+        public String getDescription() {
+            return "Gold " + super.getDescription();
+        }
+
+    }
+
+    static class Stripes extends FishDecorator {
+        private String color;
+
+        public Stripes(Fish fish, String color) {
+            super(fish);
+            this.color = color;
+        }
+
+        @Override
+        public String getDescription() {
+            return this.color + " Stripes " + super.getDescription();
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Fish fish = new BabyFish();
+        fish = new Gold(fish);
+        fish = new Stripes(fish, "White");
+
+        // Alternative Initialization:
+        // Fish fish = new Stripes(new Gold(new BabyFish()), "White");
+        System.out.println("A Fish has all: " + fish.getDescription());
+
+    }
+}
