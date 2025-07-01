@@ -11,10 +11,11 @@ public class Streams {
     }
 
     void filestreamExample() {
+        // We gotta remember to use "input.close(), output.close()"
+        // AutoCloseable
         // in Java 7 + -> This auto closes the files:
-        try (OutputStream output = new FileOutputStream("Output.txt");) {
-            InputStream input = new FileInputStream("Input.txt");
-
+        try (InputStream input = new FileInputStream("Input.txt");
+                OutputStream output = new FileOutputStream("Output.txt");) {
             int result;
             while ((result = input.read()) != -1) {
                 output.write(result);
