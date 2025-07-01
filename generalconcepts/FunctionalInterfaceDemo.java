@@ -53,19 +53,36 @@ public class FunctionalInterfaceDemo {
     // Contains -> Predicate, Consumer, Supplier, Function, BiFunction.
     class PredicateExample {
         Predicate<Integer> result = (a) -> a < 10;
+
+        void howToUse() {
+            result.test(10);
+        }
+
     }
 
     class ConsumerExample {
         Consumer<Integer> result = (a) -> System.out.println(a);
+
+        void howToUse() {
+            result.accept(10);
+        }
     }
 
     class SupplierExample {
-        Supplier<String> stringSupplier = () -> "Hello, Supplier!";
-        // System.out.println(stringSupplier); Would print that.
+        Supplier<String> result = () -> "Hello, Supplier!";
+
+        void howToUse() {
+            result.get();
+        }
     };
 
     class FunctionExample {
         Function<String, Integer> result = s -> s.length();
+
+        void howToUse() {
+            result.apply("hello");
+        }
+
     }
 
     class BiFunctionExample {
@@ -78,6 +95,10 @@ public class FunctionalInterfaceDemo {
             }
             return count;
         };
+
+        void howToUse() {
+            Integer result = charInString.apply("hello", 'h');
+        }
     }
 
     // Effectivly Final:
