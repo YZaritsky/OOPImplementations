@@ -51,6 +51,8 @@ public class FunctionalInterfaceDemo {
 
     // java.util.function.*
     // Contains -> Predicate, Consumer, Supplier, Function, BiFunction.
+
+    // Tests boolean value of 1 item.
     class PredicateExample {
         Predicate<Integer> result = (a) -> a < 10;
 
@@ -60,6 +62,7 @@ public class FunctionalInterfaceDemo {
 
     }
 
+    // Acceps void function that gets 1 value.
     class ConsumerExample {
         Consumer<Integer> result = (a) -> System.out.println(a);
 
@@ -68,6 +71,7 @@ public class FunctionalInterfaceDemo {
         }
     }
 
+    // get() -> T function that recives nothing.
     class SupplierExample {
         Supplier<String> result = () -> "Hello, Supplier!";
 
@@ -76,6 +80,7 @@ public class FunctionalInterfaceDemo {
         }
     };
 
+    // Function that gets 1 value, applies to it, and returns a result.
     class FunctionExample {
         Function<String, Integer> result = s -> s.length();
 
@@ -85,6 +90,7 @@ public class FunctionalInterfaceDemo {
 
     }
 
+    // Function that gets 2 values, applies to them, and returns a result.
     class BiFunctionExample {
         BiFunction<String, Character, Integer> charInString = (str, character) -> {
             int count = 0;

@@ -1,5 +1,7 @@
 package generalthings;
 
+// In the test - Always create your own Exception class, extending Exception.
+
 public class Exceptions {
     // 1.Compiler Errors -> 2.Runtime Errors -> 3.Known bugs -> 4.Unknown bugs.
     // 'assert isGameOver(board)' -> helps move type-3/4 errors to type-2 Errors.
