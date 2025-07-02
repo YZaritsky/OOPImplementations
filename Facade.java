@@ -28,6 +28,8 @@ public class Facade {
 
     /// ALL THIS RUBBISH ABOVE Can be simplified using Facade:
     public class Chef {
+
+        // This is the Strategy Part.
         private SaltShaker saltShaker;
         private Pantry pantry;
         private Pot pot;

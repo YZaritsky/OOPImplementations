@@ -4,7 +4,7 @@ import java.util.List;
 // Like Git. Allows managing Versions. State Management.
 
 // Originator - The subject we want to save states for.
-// Memento - Holds the state.
+// Memento - Holds the state. (public static class);
 // Caretaker - Holds a DB to store the savefiles.
 
 // Works using static nested class.
@@ -13,9 +13,11 @@ import java.util.List;
 //     a. private state.
 //     b. Methods: Memento createMemento(), restoreMemento(Memento memento);
 //     c. public static class Memento() [Must be static or I can't access from outside.]
+
 // Step 2: Create Memento with:
 //     a. private final state.
 //     b. private constructor that gets a state and updates it.
+
 // Step 3: Create CareTaker (Usually inside main):
 //     a. Holds an array of Saves (of type Mementos)
 //     b. Holds the Originator and does manipulations on it.

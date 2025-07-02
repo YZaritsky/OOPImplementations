@@ -1,14 +1,21 @@
 public class DecoratorUsingAbstractClass {
+    // Preperation:
     // Step 1 : Create some Abstract Class that is going to be decorated. (Fish) ->
     // Must have a Method in it.
     // Step 2 : Create Implementation of that Abstract Class. (BabyFish)-> Should
     // @Override!
+
+    // Decoration:
     // Step 3 : Create Decorator Abstract Class, extending the first one, and
     // providing default functionality to be split between all children.
     // (FishDecorator)
+    // It needs to hold a copy of the decorated subject (private Fish fish).
+
     // Step 4 : Extend that decorator using the object of the class from step 2.
     // (Gold),
     // This is the part where we basically enhance the first object(Decorate it).
+    // First we call the super, then we decorate it.
+
     // Step 5: When we call it, Create a new object of the First(BabyFish), and then
     // re-create it using the 2nd(Gold).
 
@@ -26,7 +33,7 @@ public class DecoratorUsingAbstractClass {
     static abstract class FishDecorator extends Fish {
         private Fish fish;
 
-        public FishDecorator(Fish fish) {
+        FishDecorator(Fish fish) {
             this.fish = fish;
         }
 
@@ -34,10 +41,13 @@ public class DecoratorUsingAbstractClass {
         public String getDescription() {
             return fish.getDescription();
         }
+
+        abstract protected void func1();
+
     }
 
     static class Gold extends FishDecorator {
-        public Gold(Fish fish) {
+        Gold(Fish fish) {
             super(fish);
         }
 
@@ -46,12 +56,16 @@ public class DecoratorUsingAbstractClass {
             return "Gold " + super.getDescription();
         }
 
+        @Override
+        public void func1() {
+        };
+
     }
 
     static class Stripes extends FishDecorator {
         private String color;
 
-        public Stripes(Fish fish, String color) {
+        Stripes(Fish fish, String color) {
             super(fish);
             this.color = color;
         }
@@ -60,6 +74,10 @@ public class DecoratorUsingAbstractClass {
         public String getDescription() {
             return this.color + " Stripes " + super.getDescription();
         }
+
+        @Override
+        public void func1() {
+        };
 
     }
 

@@ -12,7 +12,7 @@ public class Singleton {
     // (Step 1) [Doesn't have to be static like in here]
     public static class BasicSingleton {
 
-        // ** MUST CREATE A FIELD THAT HOLDS THE CLASS (Step 2)
+        // ** MUST CREATE A STATIC FIELD THAT HOLDS THE CLASS (Step 2)
         private static BasicSingleton singleton;
 
         // ** MUST BE PRIVATE! (Step 3)
