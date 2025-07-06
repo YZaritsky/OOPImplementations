@@ -11,7 +11,7 @@ import java.util.List;
 
 // Step 1: Create Originator with:
 //     a. private state.
-//     b. Methods: Memento createMemento(), restoreMemento(Memento memento);
+//     b. Methods: Memento createMemento(), void restoreMemento(Memento memento);
 //     c. public static class Memento() [Must be static or I can't access from outside.]
 
 // Step 2: Create Memento with:

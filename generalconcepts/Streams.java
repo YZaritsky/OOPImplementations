@@ -27,10 +27,10 @@ public class Streams {
 
     void filestreamUsingDecoratorExample() {
         Reader inFile = new FileReader("input.txt");
-        Reader inBuffer = new BufferdReader(inFile);
+        Reader inBuffer = new BufferedReader(inFile);
 
         Writer outFile = new FileWriter("output.txt");
-        Writer outBuffer = new BufferdWriter(outFile);
+        Writer outBuffer = new BufferedWriter(outFile);
 
     }
 }

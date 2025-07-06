@@ -1,9 +1,11 @@
 //Solves Polling by updating all the objects that observe a certain activity.
 // Step 1: Create a Subject Interface holding the methods:
 //         Register, Unregister, Notify.
+
 // Step 2: Create a class that implements that interface and holds an Observer Array.
 
 // Step 3: Create an Observer interface holding the method Update.
+
 // Step 4: Create classes that extends the observer and implements that interface. 
 // ** Make sure to register to the Subject(super) on it's constructor. ** 
 
@@ -42,7 +44,7 @@ public class ObserverPattern {
     }
 
     // Step 4:
-    public class SomeObserver extends Subject implements Observer {
+    public class SomeObserver implements Observer {
         public SomeObserver() {
             super.registerObserver(this);
         }

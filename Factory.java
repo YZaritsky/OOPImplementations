@@ -1,8 +1,9 @@
 // Step 1: Create Interface to implement (Shape) -> Must have a method in it.
 // Step 2: Create enum to hold different implementations of the interface.(ShapeType)
 // Step 3: Create relevant classes that implement the interface.
-// Step 4: Create Factory, That has no constructor, a single public class,
+// Step 4: Create Factory, That has no constructor, with a static public class,
 //      Using switch-case to return the correct "new" Object.
+// Step 5: When you call it, you dont need to call it with "new".
 
 enum ShapeType {
     CIRCLE, SQUARE, TRIANGLE;
@@ -30,8 +31,8 @@ class Triangle implements Shape {
     }
 }
 
-public class Factory {
-    public Shape getShape(ShapeType shapeType) {
+class Factory {
+    public static Shape getShape(ShapeType shapeType) {
         if (shapeType == null) {
             return null;
         }
@@ -48,8 +49,8 @@ public class Factory {
     }
 
     public static void main(String[] args) {
-        // NOTICE: new Factory() -> .getShape();
-        Shape shape = new Factory().getShape(ShapeType.CIRCLE);
+        // NOTICE: Factory.getShape();
+        Shape shape = Factory.getShape(ShapeType.CIRCLE);
         shape.draw();
     }
 }

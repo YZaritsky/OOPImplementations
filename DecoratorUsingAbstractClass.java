@@ -19,18 +19,18 @@ public class DecoratorUsingAbstractClass {
     // Step 5: When we call it, Create a new object of the First(BabyFish), and then
     // re-create it using the 2nd(Gold).
 
-    static abstract class Fish {
+    interface Fish {
         public abstract String getDescription();
     };
 
-    static class BabyFish extends Fish {
+    class BabyFish implements Fish {
         @Override
         public String getDescription() {
             return "Baby Fish";
         }
     }
 
-    static abstract class FishDecorator extends Fish {
+    abstract class FishDecorator implements Fish {
         private Fish fish;
 
         FishDecorator(Fish fish) {
@@ -42,11 +42,13 @@ public class DecoratorUsingAbstractClass {
             return fish.getDescription();
         }
 
+        // Not a must, but this is how you make private classes that lower classes must
+        // implement.
         abstract protected void func1();
 
     }
 
-    static class Gold extends FishDecorator {
+    class Gold extends FishDecorator {
         Gold(Fish fish) {
             super(fish);
         }
@@ -62,7 +64,7 @@ public class DecoratorUsingAbstractClass {
 
     }
 
-    static class Stripes extends FishDecorator {
+    class Stripes extends FishDecorator {
         private String color;
 
         Stripes(Fish fish, String color) {
